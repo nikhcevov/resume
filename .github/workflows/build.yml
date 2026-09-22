@@ -1,0 +1,42 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - resume.tex
+      - Dockerfile
+      - scripts/**
+      - .github/workflows/build.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t latex-resume .
+
+      - name: Compile resume
+        run: docker run --rm -v "$PWD:/workspace" latex-resume
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume
+          path: |
+            vladimir_ovechkin_resume.pdf
+            vladimir_ovechkin_resume.png
+
+      - name: Commit rebuilt artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vladimir_ovechkin_resume.pdf vladimir_ovechkin_resume.png
+          git diff --cached --quiet || git commit -m "chore: rebuild resume artifacts"
+          git push
