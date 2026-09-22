@@ -1,34 +1,30 @@
 # Vladimir Ovechkin resume
 
-PDF Resume builder written with LaTeX. PDF is generated using Docker container.
+PDF resume builder written with LaTeX. Built inside a Docker container — no local TeX installation required.
 
-## How to update on change
+## Build
 
-To automatically rebuild the resume when changes are made, use Docker Compose:
+Generates `vladimir_ovechkin_resume.pdf` and `vladimir_ovechkin_resume.png`:
 
 ```sh
-docker-compose up 
+make build
 ```
 
-## How to build
+## Watch mode
 
-Generates 2 resume files:
-- `vladimir_ovechkin_resume_en.pdf` - English version
-- `vladimir_ovechkin_resume_ru.pdf` - Russian version
+Automatically rebuilds the resume when `resume.tex` changes:
 
 ```sh
-# Run once to allow execute for build script
-chmod +x build.sh
-
-# Run to build
-./build.sh
+make watch
+# or
+docker compose up
 ```
 
 ## Example
 
 Here is how the resume looks like:
 
-![Resume](./vladimir_ovechkin_resume_en.png)
+![Resume](./vladimir_ovechkin_resume.png)
 
 ## Credits
 

@@ -1,47 +1,32 @@
 %-------------------------
-% Resume in LateX
+% Resume in LaTeX
 % Author: Vladimir Ovechkin
-% License : MIT
+% License: MIT
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1,T2A]{fontenc}
-\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english,russian]{babel}
-\usepackage{tabularx}
+\usepackage[english]{babel}
 \input{glyphtounicode}
 
-% Language selection mechanism
-\newif\ifrussian
-
-% Uncomment to use Russian
-\russiantrue
-
-% Bilingual text command - shows only one language based on the flag
-\newcommand{\text}[2]{%
-  \ifrussian#2\else#1\fi%
+\hypersetup{
+  pdftitle={Vladimir Ovechkin -- Resume},
+  pdfauthor={Vladimir Ovechkin},
+  pdfsubject={Resume},
+  pdfkeywords={Software Engineer, Frontend, React, TypeScript}
 }
-
-% Set the main document language
-\ifrussian
-  \selectlanguage{russian}
-\else
-  \selectlanguage{english}
-\fi
 
 \pagestyle{fancy}
 \fancyhf{} % Clear all header and footer fields
-\fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -63,7 +48,7 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate PDF is machine readable/ATS parsable
+% Ensure that generated PDF is machine readable / ATS parsable
 \pdfgentounicode=1
 
 %-------------------------
@@ -74,25 +59,11 @@
   }
 }
 
-% Just in case someone needs a heading that does not need to be in a list
-\newcommand{\resumeHeading}[4]{
-    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -117,216 +88,104 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{mailto:me.vladimirovechkin@gmail.com}{\Large \text{Vladimir Ovechkin}{Владимир Овечкин}}} & \text{Email}{Эл. почта}: \href{mailto:me.vladimirovechkin@gmail.com}{me.vladimirovechkin@gmail.com}\\
-  \href{https://www.linkedin.com/in/vladimir-ovechkin/}{linkedin.com/in/vladimir-ovechkin} & \text{Mobile}{Телефон}: \href{tel:+79956000615}{+7-995-600-06-15} \\
+  \textbf{\href{mailto:me.vladimirovechkin@gmail.com}{\Large Vladimir Ovechkin}} & Email: \href{mailto:me.vladimirovechkin@gmail.com}{me.vladimirovechkin@gmail.com}\\
+  \href{https://www.linkedin.com/in/vladimir-ovechkin/}{linkedin.com/in/vladimir-ovechkin} & Mobile: \href{tel:+79956000615}{+7-995-600-06-15} \\
 \end{tabular*}
 
-%----------ABOUT ME-----------------
-% \section{
-%   \text
-%   {About me}
-%   {Обо мне}}
-
-% \text
-% {Frontend developer with \textbf{6 years} of commercial experience, working in teams ranging from 2 to 20 members, both remotely and on-site. Have 2 years of \textbf{ mentoring } experience. I have led projects through the full development cycle—from gathering product owner requirements to establishing a fully automated release process with high test coverage, detailed analytics and CI/CD.}
-% {Frontend разработчик с \textbf{6 годами} коммерческого опыта, работал в командах от 2 до 20 человек, как удаленно, так и в офисе. Имею 2 года опыта \textbf{наставничества}. Я участвовал в проектах на протяжении всего цикла разработки — от сбора требований по продукту до создания MVP с полностью автоматизированным релизным процессом с высоким покрытием тестами, подробной аналитикой и CI/CD.}
-
-% \text
-% {I specialize in UI implementation and have contributed to multiple successful MVP product releases. Beyond core frontend expertise, I have developed features involving 2D and 3D graphics in web applications. Passionate about the evolution of the frontend technologies and I stay up-to-date with these topics.}
-% {Я специализируюсь на разработке пользовательских интерфейсов и внес вклад во множество успешных запусков MVP. Помимо основных знаний в области фронтенда, я занимался фичами, включающими работу с 2D и 3D графикой в веб-приложениях. Увлечен развитием фронтенд технологий и слежу за последними новостями в этой области.}
-
-% \text
-% {As a hobby, I build customized keyboards and develop software for them, which involves low-level programming and can be explored on my GitHub.}
-% {В качестве хобби я создаю индивидуальные клавиатуры и разрабатываю программное обеспечение для них, что включает в себя низкоуровневое программирование. Все находится в открытом доступе на моем GitHub.}
-
 %-----------EDUCATION-----------------
-\section{
-  \text
-  {Education}
-  {Образование}}
+\section{Education}
 
 \resumeSubHeadingListStart
 \resumeSubheading
-{\text
   {ITMO University}
-  {Университет ИТМО}}
-{\text
   {St. Petersburg, Russia}
-  {Санкт-Петербург, Россия}}
-{\text
   {Bachelor in Computer Science; GPA: 4.50 / 5.00}
-  {Бакалавр, Информационные системы и технологии; Оценка: 4.50 / 5.00}}
-{\text
   {Sep 2017 -- Jun 2021}
-  {Сен. 2017 -- Июн. 2021}}
 \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
-\section
- {\text
-  {Experience}
-  {Опыт работы}}
+\section{Experience}
 
 \resumeSubHeadingListStart
 \resumeSubheading
-{\text
   {Ecom.Tech}
-  {Ecom.Tech}}
-{\text
   {St. Petersburg, Russia}
-  {Санкт-Петербург, Россия}}
-{\text
   {Senior Software Engineer}
-  {Старший разработчик}}
-{\text
   {Aug 2022 -- Present}
-  {Авг. 2022 -- Настоящее время}}
 \resumeItemListStart
 \resumeItem
-{\text
   {Led the end-to-end launch process for 3 web products within the client support domain of more than 1000 unique users, overseeing all phases from inception to MVP release while consistently meeting aggressive deadlines.}
-  {Руководил процессом запуска 3х веб-приложений в области клиентской поддержки с более чем 1000 пользователей, включая все этапы от концепции до выпуска MVP, стабильно соблюдая жесткие сроки.}}
 \resumeItem
-{\text
   {Provided supervision, leadership, and mentorship to a 3 new team members to achieve high performance and deliver MVP in time.}
-  {Занимался наставничеством 3х новых членов команды для достижения высокой производительности и выпуска MVP в срок.}}
 \resumeItem
-{\text
   {Worked on Frontend stack set of JS technologies using Typescript, ES6/ESNext, ReactJS, GraphQL, Zustand, SASS, Jest, Webpack and Storybook in Agile/Scrum based project.}
-  {Работал над фронтендом на JS стеке, используя Typescript, ES6/ESNext, ReactJS, GraphQL, Zustand, SASS, Jest, Webpack и Storybook в Agile/Scrum проекте.}}
 \resumeItem
-{\text
   {Developed and implemented a solution for integrating GraphQL with REST API of third-party services using Node.js, that allowed to reduce the number of tasks of the backend team by 30\%.}
-  {Разработал и внедрил в компанию решение для интеграции GraphQL с REST API сторонних сервисов, на базе Node.js, что позволило сократить количество задач команды бекенда на 30\%.}}
 \resumeItem
-{\text
   {Developed and implemented a solution for rendering tables in the company using virtualization and an optimal way to load data from graphql, which improved performance and reduced page load time by up to 50\% for 3 applications.}
-  {Разработал и внедрил в компанию решение для рендеринга таблиц, используя виртуализацию и оптимальный способ загрузки данных с graphql, что улучшило производительность и уменьшило время загрузки страниц до 50\% для 3х приложений.}}
 \resumeItemListEnd
-
-% --------Multiple Positions Heading------------
-%  \resumeSubSubheading
-%   {Software Engineer I}{Oct 2014 -- Sep 2016}
-%   \resumeItemListStart
-%      \resumeItem{Apache Beam}
-%        {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%   \resumeItemListEnd
 
 %-------------------------------------------
 
 \resumeSubheading
-{\text
   {Market Logic Software}
-  {Market Logic Software}}
-{\text
   {Sofia, Bulgaria}
-  {София, Болгария}}
-{\text
   {Software Engineer}
-  {Разработчик}}
-{\text
   {Jul 2021 -- Aug 2022}
-  {Июль 2021 -- Авг. 2022}}
 \resumeItemListStart
 \resumeItem
-{\text
   {Contributed to the development of 5 web platform micro-frontend modules utilizing TypeScript, React, and Redux within a collaborative team of 8 developers, serving a 100+ business customers worldwide.}
-  {Внес вклад в разработку 5 микро-фронтендов веб-платформы, используя TypeScript, React и Redux в команде из 8 разработчиков, обслуживающих 100+ клиентов в бизнесе.}}
 \resumeItem
-{\text
   {Implemented comprehensive frontend code refactoring, resulting in a massive decrease in monthly new bug reports from 50 to 20 in average.}
-  {Реализовал комплексный рефакторинг фронтенда, что привело к значительному сокращению ежемесячного количества новых багов с 50 до 20.}}
 \resumeItem
-{\text
   {Identified and resolved micro-frontend redundant dependencies issue, resulting up to 25\% speed-up in page load speed (TTI and bunch of other Lighthouse metrics) leads to increase in user engagement.}
-  {Определил и устранил проблему лишних зависимостей в микро-фронтендах, что привело к росту скорости загрузки страницы до 25\% (TTI + метрики Lighthouse) и увеличению пользовательской вовлеченности.}}
 \resumeItem
-{\text
   {Implemented a frontend platform toolkit to optimize development processes, enhance code accuracy, and standardize the codebase, resulting in a significant reduction in development time and dev team satisfying rate.}
-  {Реализовал инструмент для оптимизации процессов разработки и повышения стандартизации кода, что привело к значительному сокращению времени разработки и росту удовлетворенности разработчиков.}}
 \resumeItemListEnd
 
 \resumeSubheading
-{\text
   {Bimdata}
-  {Bimdata}}
-{\text
   {St. Petersburg, Russia}
-  {Санкт-Петербург, Россия}}
-{\text
   {Fullstack Software Engineer}
-  {Fullstack разработчик}}
-{\text
   {May 2019 -- Jul 2021}
-  {Май 2019 -- Июль 2021}}
 \resumeItemListStart
 \resumeItem
-{\text
   {Development of a Software as a Service (SaaS) solution tailored for construction builders, achieving a valuation exceeding \$1 million.}
-  {Разработка программного обеспечения в виде услуги (SaaS) для строительных компаний, достигшего оценки в 100 млн. рублей.}}
 \resumeItem
-{\text
   {Established Gitlab CI/CD pipelines for multiple products, ensuring efficient release management and publication processes, reducing time to production.}
-  {Установил Gitlab CI/CD пайплайны для нескольких продуктов, что обеспечло эффективное управление релизами, сокращая время до выпуска на продакшен и количество багов.}}
 \resumeItem
-{\text
   {Implemented a comprehensive reusable component library, leading to a notable decrease in development time and reduced the number of bugs by 40\%.}
-  {Реализовал комплексную библиотеку повторно переиспользуемых компонентов, что привело к значительному сокращению времени разработки и сократило количество багов до 40\%.}}
 \resumeItem
-{\text
   {Worked on a product's architecture to implement micro-frontend practices using Single-SPA to incorporate set of products into a unified cloud based application.}
-  {Работал над архитектурой продукта для реализации микро-фронтенд подхода, используя Single-SPA для интеграции набора продуктов в единое облачное приложение.}}
 \resumeItem
-{\text
   {Provided task estimates, testing, reviews and production issue fixes, deployed projects to internal and production environments and achieved 95\% delivery of features that met SLAs in time.}
-  {Обеспечивал оценку задач, тестирование, ревью кода и исправление багов. Занимался развертыванием проектов в тестовых и продовых окружениях, достигая 95\% доставки фич, соответствующих SLAs в срок.}}
 \resumeItem
-{\text
   {Integrated 3D model viewer to React application, used Three.js and Pixi.js to render 3D models.}
-  {Интегрировал инструмент для просмотра 3D-моделей в React-приложение, используя Three.js и Pixi.js для рендеринга.}}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------------
-\section
- {\text
-  {Projects}
-  {Проекты}}
+\section{Projects}
 
 \resumeSubHeadingListStart
 \resumeSubItem
-{\text
   {Eyelash Sofle keyboard}
-  {Eyelash Sofle keyboard}}
-{\text
   {Open source ergonomic keyboard with split design and customizable layout. Built with KiCad for pcb design and OpenScad for 3D printing case.}
-  {Открытый исходный код эргономичной сплит клавиатуры с настраиваемой раскладкой. Разработан с использованием KiCad для дизайна печатных плат и OpenScad для 3D-печати корпуса.}}
 \resumeSubItem
-{\text
   {Pdfjs-custom-canvas}
-  {Pdfjs-custom-canvas}}
-{\text
   {Customized pdf.js library canvas wrapper for rendering pdf documents with custom styles and annotations.}
-  {Кастомизированная обертка canvas библиотеки pdf.js для рендеринга pdf-документов с пользовательскими стилями и аннотациями.}}
 \resumeSubHeadingListEnd
 
 %--------SKILLS------------
-\section
- {\text
-  {Skills}
-  {Навыки}}
+\section{Skills}
 \resumeSubHeadingListStart
 \resumeSubItem
-{\text
   {Languages}
-  {Языки}}
-{Python, JavaScript, TypeScript, SQL, Java}
+  {Python, JavaScript, TypeScript, SQL, Java}
 \resumeSubItem
-{\text
   {Technologies}
-  {Технологии}}
-{React, Redux, Next.js, Node.js, HTML, CSS/Sass, Tailwind CSS, Express, PostgreSQL, MongoDB, Git, Docker, Kubernetes}
+  {React, Redux, Next.js, Node.js, HTML, CSS/Sass, Tailwind CSS, Express, PostgreSQL, MongoDB, Git, Docker, Kubernetes}
 \resumeSubHeadingListEnd
 
 \end{document}
